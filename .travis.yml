@@ -4,3 +4,12 @@ node_js:
 sudo: false
 after_success:
 - npm run report-coverage
+deploy:
+  provider: npm
+  email: d2ltravisdeploy@d2l.com
+  api_key:
+    secure: D7BCQWOQZpba5jHcj1D/YTuugEezKdnYocLMUi9AN6mrAFeAg7rQExhfmuNFKnySupFtBektMnk4OBCPO+L8nQOyYZLkKvE8+TahoRqsSTRUuU/Upe/QV8E7VZFjYnIJQUYzlHP3RkAlUujXCBeNWBcEhOkRgt/mHiOBIGsDhIE=
+  on:
+    tags: true
+    repo: Brightspace/frau-locale-provider
+    all_branches: true
