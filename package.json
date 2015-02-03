@@ -1,0 +1,36 @@
+{
+  "name": "frau-locale-provider",
+  "version": "0.0.1",
+  "description": "Free range app utility for providing information about the current user's locale within the ILP",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "npm run lint:src && npm run lint:test",
+    "lint:src": "jshint lib/*.js",
+    "lint:test": "jshint test/*.js",
+    "test:unit": "istanbul cover _mocha test/*.js -- -R spec",
+    "test": "npm run lint -s && npm run test:unit -s",
+    "report-coverage": "coveralls < ./coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Brightspace/frau-locale-provider.git"
+  },
+  "keywords": [
+    "locale",
+    "frau"
+  ],
+  "author": "D2L Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Brightspace/frau-locale-provider/issues"
+  },
+  "homepage": "https://github.com/Brightspace/frau-locale-provider",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.5",
+    "jshint": "^2.6.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
+  }
+}
