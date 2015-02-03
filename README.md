@@ -4,15 +4,41 @@
 [![Coverage Status][coverage-image]][coverage-url]
 
 frau-locale-provider is a utility that you can use in your D2L free range
-applications in order to get information about the locale of the current user.
+applications ([frau](https://www.npmjs.com/browse/keyword/frau)) in order to get information about the locale of the current user.
+
+To install via [NPM](https://www.npmjs.com/):
+
+`npm install frau-locale-provider`
 
 ##API
 
+###getLanguageCode()
 
+Gets the current user's language code, as a [RFC 3066](https://www.ietf.org/rfc/rfc3066.txt) value. e.g. "en", "en-us", "fr-ca".
 
-[npm-url]: https://npmjs.org/package/return-points
-[npm-image]: https://badge.fury.io/js/return-points.png
-[ci-image]: https://travis-ci.org/Brightspace/return-points.svg?branch=master
-[ci-url]: https://travis-ci.org/Brightspace/return-points
-[coverage-image]: https://img.shields.io/coveralls/Brightspace/return-points.svg
-[coverage-url]: https://coveralls.io/r/Brightspace/return-points?branch=master
+```javascript
+var localeProvider = require('frau-locale-provider');
+
+var languageCode = localeProvider.getLanguageCode();
+console.log(languageCode); // -> e.g. "en-us"
+```
+
+###isRtl()
+
+Used to determine if the current user's locale requires that text be written
+in the [right to left (RTL)](http://en.wikipedia.org/wiki/Right-to-left)
+direction.
+
+```javascript
+var localeProvider = require('frau-locale-provider');
+
+var isRtl = localeProvider.isRtl();
+console.log(isRtl); // -> true or false
+```
+
+[npm-url]: https://npmjs.org/package/frau-locale-provider
+[npm-image]: https://img.shields.io/npm/v/frau-locale-provider.svg
+[ci-image]: https://img.shields.io/travis/Brightspace/frau-locale-provider/master.svg
+[ci-url]: https://travis-ci.org/Brightspace/frau-locale-provider
+[coverage-image]: https://img.shields.io/coveralls/Brightspace/frau-locale-provider/master.svg
+[coverage-url]: https://coveralls.io/r/Brightspace/frau-locale-provider?branch=master
