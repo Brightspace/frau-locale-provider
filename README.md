@@ -12,15 +12,15 @@ To install via [NPM](https://www.npmjs.com/):
 
 ##API
 
-###getLanguageCode()
+###getLangCode()
 
-Gets the current user's language code, as a [RFC 3066](https://www.ietf.org/rfc/rfc3066.txt) value. e.g. "en", "en-us", "fr-ca".
+Gets the current user's language code, as a [RFC 3066](https://www.ietf.org/rfc/rfc3066.txt) value. e.g. "en", "en-US", "fr-CA".
 
 ```javascript
 var localeProvider = require('frau-locale-provider');
 
-var languageCode = localeProvider.getLanguageCode();
-console.log(languageCode); // -> e.g. "en-us"
+var langCode = localeProvider.getLangCode();
+console.log(langCode); // -> e.g. "en-GB"
 ```
 
 ###isRtl()
