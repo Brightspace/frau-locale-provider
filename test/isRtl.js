@@ -54,4 +54,10 @@ describe('isRtl', function() {
 		expect(value).to.be.true;
 	});
 
+	it('should be case-insensitive', function() {
+		global.window.document.body.dir = 'RTL';
+		var value = isRtl();
+		expect(value).to.be.true;
+	});
+
 });

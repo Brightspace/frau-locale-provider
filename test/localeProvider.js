@@ -5,8 +5,8 @@ var expect = require('chai').expect,
 
 describe('localeProvider', function() {
 
-	it('should have getLangCode defined', function() {
-		expect(localeProvider.getLangCode).to.be.defined;
+	it('should have getLangTag defined', function() {
+		expect(localeProvider.getLangTag).to.be.defined;
 	});
 
 	it('should have isRtl defined', function() {

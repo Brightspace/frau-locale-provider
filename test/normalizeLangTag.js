@@ -1,46 +1,46 @@
 'use strict';
 
 var expect = require('chai').expect,
-	normalizeLangCode = require('../lib/normalizeLangCode');
+	normalizeLangTag = require('../lib/normalizeLangTag');
 
-describe('normalizeLangCode', function() {
+describe('normalizeLangTag', function() {
 
-	[undefined,null,''].forEach(function(langCode, index) {
+	[undefined,null,''].forEach(function(langTag, index) {
 		it('should return empty for invalid value ' + (index + 1), function() {
-			var value = normalizeLangCode(langCode);
+			var value = normalizeLangTag(langTag);
 			expect(value).to.equal('');
 		});
 	});
 
-	[' ',' en-US', 'fr-CA ', ' ab-CD '].forEach(function(langCode) {
-		it('should trim whitespace: "' + langCode + '"', function() {
-			var value = normalizeLangCode(langCode);
-			expect(value).to.equal(langCode.trim());
+	[' ',' en-US', 'fr-CA ', ' ab-CD '].forEach(function(langTag) {
+		it('should trim whitespace: "' + langTag + '"', function() {
+			var value = normalizeLangTag(langTag);
+			expect(value).to.equal(langTag.trim());
 		});
 	});
 
 	it('should leave single value locale alone', function() {
-		var value = normalizeLangCode('en');
+		var value = normalizeLangTag('en');
 		expect(value).to.equal('en');
 	});
 
 	it('should lowercase single value', function() {
-		var value = normalizeLangCode('FR');
+		var value = normalizeLangTag('FR');
 		expect(value).to.equal('fr');
 	});
 
 	it('should uppercase country', function() {
-		var value = normalizeLangCode('en-us');
+		var value = normalizeLangTag('en-us');
 		expect(value).to.equal('en-US');
 	});
 
 	it('should lowercase locale and uppercase country', function() {
-		var value = normalizeLangCode('AB-cd');
+		var value = normalizeLangTag('AB-cd');
 		expect(value).to.equal('ab-CD');
 	});
 
 	it('should drop extra tags in the middle', function() {
-		var value = normalizeLangCode('ab-cde-fg');
+		var value = normalizeLangTag('ab-cde-fg');
 		expect(value).to.equal('ab-FG');
 	});
 
