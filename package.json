@@ -1,6 +1,6 @@
 {
   "name": "frau-locale-provider",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Free range app utility for providing information about the current user's locale within the ILP",
   "main": "lib/index.js",
   "scripts": {
