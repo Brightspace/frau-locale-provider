@@ -1,6 +1,6 @@
 'use strict';
 
-var defaultLangCode = require('../lib/defaultLangCode'),
+var defaultLangTag = require('../lib/defaultLangTag'),
 	expect = require('chai').expect,
 	getHtmlLang = require('../lib/getHtmlLang'),
 	sinon = require('sinon');
@@ -46,7 +46,7 @@ describe('getHtmlLang', function() {
 		it('should return default ' + ( index + 1 ), function() {
 			func();
 			var value = getHtmlLang();
-			expect(value).to.equal(defaultLangCode);
+			expect(value).to.equal(defaultLangTag);
 		});
 	});
 
