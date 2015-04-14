@@ -38,6 +38,14 @@ var isRtl = localeProvider.isRtl();
 console.log(isRtl); // -> true or false
 ```
 
+## Contributing
+Contributions are welcome, please submit a pull request!
+
+### Code Style
+
+This repository is configured with [EditorConfig](http://editorconfig.org) rules and
+contributions should make use of them.
+
 [npm-url]: https://npmjs.org/package/frau-locale-provider
 [npm-image]: https://img.shields.io/npm/v/frau-locale-provider.svg
 [ci-image]: https://img.shields.io/travis/Brightspace/frau-locale-provider/master.svg
