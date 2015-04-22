@@ -22,8 +22,13 @@ describe('resolveLang', function() {
 	});
 
 	it('should fall back to base language for unknown country', function() {
-		var value = resolveLang('en-AU');
+		var value = resolveLang('en-CD');
 		expect(value).to.equal('en');
+	});
+
+	it('should fall back to en-GB for en-AU', function() {
+		var value = resolveLang('en-AU');
+		expect(value).to.equal('en-GB');
 	});
 
 	it('should return base language if only language specified', function() {
