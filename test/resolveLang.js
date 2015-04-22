@@ -41,4 +41,9 @@ describe('resolveLang', function() {
 		expect(value).to.equal(defaultLangTag);
 	});
 
+	it('should return default for no longer supported id-ID', function() {
+		var value = resolveLang('id-ID');
+		expect(value).to.equal(defaultLangTag);
+	});
+
 });
