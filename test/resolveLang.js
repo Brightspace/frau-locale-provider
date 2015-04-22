@@ -6,6 +6,10 @@ var expect = require('chai').expect,
 
 describe('resolveLang', function() {
 
+	it('should default to en', function() {
+		expect(defaultLangTag).to.equal('en');
+	});
+
 	it('should return input if matches supported country', function() {
 		var value = resolveLang('es-MX');
 		expect(value).to.equal('es-MX');
