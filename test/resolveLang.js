@@ -1,13 +1,13 @@
 'use strict';
 
 var expect = require('chai').expect,
-	defaultLangTag = require('../lib/defaultLangTag'),
+	config = require('../lib/config'),
 	resolveLang = require('../lib/resolveLang');
 
 describe('resolveLang', function() {
 
 	it('should default to en', function() {
-		expect(defaultLangTag).to.equal('en');
+		expect(config.defaultLangTag).to.equal('en');
 	});
 
 	it('should return input if matches supported country', function() {
@@ -30,7 +30,7 @@ describe('resolveLang', function() {
 		expect(value).to.equal('en');
 	});
 
-	it('should fall back to en-GB for en-AU', function() {
+	it('should alias en-GB for en-AU', function() {
 		var value = resolveLang('en-AU');
 		expect(value).to.equal('en-GB');
 	});
@@ -47,12 +47,12 @@ describe('resolveLang', function() {
 
 	it('should return default if no match found', function() {
 		var value = resolveLang('ab-CD');
-		expect(value).to.equal(defaultLangTag);
+		expect(value).to.equal(config.defaultLangTag);
 	});
 
 	it('should return default for no longer supported id-ID', function() {
 		var value = resolveLang('id-ID');
-		expect(value).to.equal(defaultLangTag);
+		expect(value).to.equal(config.defaultLangTag);
 	});
 
 });
