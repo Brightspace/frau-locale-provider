@@ -11,7 +11,7 @@ describe('getHtmlLang', function() {
 
 	beforeEach(function() {
 
-		getAttribute = sinon.stub().returns('ab-CD');
+		getAttribute = sinon.stub();
 
 		getElementsByTagName = sinon.stub()
 			.returns([{ getAttribute: getAttribute }]);
@@ -46,15 +46,28 @@ describe('getHtmlLang', function() {
 		it('should return default ' + ( index + 1 ), function() {
 			func();
 			var value = getHtmlLang();
-			expect(value).to.equal(config.defaultLangTag);
+			expect(value.lang).to.equal(config.defaultLangTag);
 		});
 	});
 
 	it('should return HTML element lang attribute value', function() {
+		getAttribute.withArgs('lang').returns('ab-CD');
 		var value = getHtmlLang();
 		expect(getElementsByTagName.calledWith('html')).to.be.true;
 		expect(getAttribute.calledWith('lang')).to.be.true;
-		expect(value).to.equal('ab-CD');
+		expect(value.lang).to.equal('ab-CD');
+	});
+
+	it('should return null fallback when no data attribute', function() {
+		getAttribute.withArgs('data-lang-default').returns(null);
+		var value = getHtmlLang();
+		expect(value.fallback).to.not.be.defined;
+	});
+
+	it('should return fallback value', function() {
+		getAttribute.withArgs('data-lang-default').returns('de-FG');
+		var value = getHtmlLang();
+		expect(value.fallback).to.equal('de-FG');
 	});
 
 });

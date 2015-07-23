@@ -4,20 +4,19 @@ var expect = require('chai').expect,
 	getLangTag = require('../lib/getLangTag'),
 	sinon = require('sinon');
 
-describe('getLangCode', function() {
+describe('getLangTag', function() {
 
 	var getHtmlLang, resolveLang;
 
 	beforeEach(function() {
-		getHtmlLang = getLangTag._getHtmlLang;
-		resolveLang = getLangTag._resolveLang;
-		getLangTag._getHtmlLang = sinon.spy();
-		getLangTag._resolveLang = sinon.spy();
+		getHtmlLang = sinon.stub(getLangTag, '_getHtmlLang')
+			.returns({lang: 'ab-CD'});
+		resolveLang = sinon.stub(getLangTag, '_resolveLang');
 	});
 
 	afterEach(function() {
-		getLangTag._getHtmlLang = getHtmlLang;
-		getLangTag._resolveLang = resolveLang;
+		getHtmlLang.restore();
+		resolveLang.restore();
 	});
 
 	it('should get language code off HTML element', function() {

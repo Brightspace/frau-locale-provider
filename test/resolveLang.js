@@ -50,6 +50,16 @@ describe('resolveLang', function() {
 		expect(value).to.equal(config.defaultLangTag);
 	});
 
+	it('should return fallback if no match found', function() {
+		var value = resolveLang('ab-CD', 'fr-CA');
+		expect(value).to.equal('fr-CA');
+	});
+
+	it('should return default if input and fallback do not match', function() {
+		var value = resolveLang('ab-CD', 'ef-GH');
+		expect(value).to.equal(config.defaultLangTag);
+	});
+
 	it('should return default for no longer supported id-ID', function() {
 		var value = resolveLang('id-ID');
 		expect(value).to.equal(config.defaultLangTag);
