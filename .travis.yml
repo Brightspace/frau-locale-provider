@@ -8,7 +8,7 @@ deploy:
   provider: npm
   email: d2ltravisdeploy@d2l.com
   api_key:
-    secure: Xa3GrxtuwAwKS9Y8hT10XGzKTZcaZxPInOvvJGr4prqAS4u3LiE979pIY6y5mmtCpBx2VaqO5jPnuHgaa+hGy4aM8erVkAooq/+DW3ZYfA/MIm8kOJ2SVCxiXW8ZNYWO/ZITqJvmGBK/JY8Mz6NUdGyb3wS8kZwOLT6xbgp8yPM=
+    secure: AGc9V+jAJBaDeQGLadnshQeToP1oMzULY7qKXiOr0XR5OsZanzwc0oTuszzg4NzxI53n6TH1Ev/W4nurlTQ8fQtOA/VEycIBLwEW4k1gveaEiyXjkANJp1I6cztqAHIP5jQsgeNOjWDpftyEvCEg6fvDl21/Fw5eUvqaNIPF7DI=
   on:
     tags: true
     repo: Brightspace/frau-locale-provider
