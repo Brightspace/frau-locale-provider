@@ -13,3 +13,4 @@ deploy:
     tags: true
     repo: Brightspace/frau-locale-provider
     all_branches: true
+  edge: true
