@@ -1,8 +1,8 @@
 'use strict';
 
 var expect = require('chai').expect,
-	config = require('../lib/config'),
-	resolveLang = require('../lib/resolveLang');
+	config = require('../src/config'),
+	resolveLang = require('../src/resolveLang');
 
 describe('resolveLang', function() {
 

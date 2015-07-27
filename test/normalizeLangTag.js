@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect,
-	normalizeLangTag = require('../lib/normalizeLangTag');
+	normalizeLangTag = require('../src/normalizeLangTag');
 
 describe('normalizeLangTag', function() {
 
