@@ -1,8 +1,8 @@
 'use strict';
 
-var config = require('../lib/config'),
+var config = require('../src/config'),
 	expect = require('chai').expect,
-	getHtmlLang = require('../lib/getHtmlLang'),
+	getHtmlLang = require('../src/getHtmlLang'),
 	sinon = require('sinon');
 
 describe('getHtmlLang', function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect,
-	isRtl = require('../lib/isRtl');
+	isRtl = require('../src/isRtl');
 
 describe('isRtl', function() {
 

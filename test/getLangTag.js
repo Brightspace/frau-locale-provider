@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect,
-	getLangTag = require('../lib/getLangTag'),
+	getLangTag = require('../src/getLangTag'),
 	sinon = require('sinon');
 
 describe('getLangTag', function() {
