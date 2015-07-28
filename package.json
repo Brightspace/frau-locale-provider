@@ -1,6 +1,6 @@
 {
   "name": "frau-locale-provider",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Free range app utility for providing information about the current user's locale within the ILP",
   "main": "src/index.js",
   "scripts": {
@@ -26,6 +26,10 @@
     "url": "https://github.com/Brightspace/frau-locale-provider/issues"
   },
   "homepage": "https://github.com/Brightspace/frau-locale-provider",
+  "dependencies": {
+    "ifrau": "^0.7.1",
+    "q": "^1.4.1"
+  },
   "devDependencies": {
     "chai": "^1.10.0",
     "coveralls": "^2.11.2",

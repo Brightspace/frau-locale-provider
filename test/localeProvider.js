@@ -13,4 +13,16 @@ describe('localeProvider', function() {
 		expect(localeProvider.isRtl).to.be.defined;
 	});
 
+	it('should return framed isRtl', function() {
+		global.window.D2L = undefined;
+		var result = localeProvider.isRtl();
+		expect(result).to.be.defined;
+	});
+
+	it('should return local isRtl', function() {
+		global.window.D2L = {};
+		var result = localeProvider.isRtl();
+		expect(result).to.be.defined;
+	});
+
 });
