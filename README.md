@@ -21,8 +21,9 @@ region subtag, separated by a hyphen (e.g. "en-US", "fr-CA").
 ```javascript
 var localeProvider = require('frau-locale-provider');
 
-var langTag = localeProvider.getLangTag();
-console.log(langTag); // -> e.g. "en-GB"
+localeProvider.getLangTag().then(function(langTag) {
+	console.log(langTag); // -> e.g. "en-GB"
+});
 ```
 
 ### isRtl()
@@ -34,8 +35,9 @@ direction.
 ```javascript
 var localeProvider = require('frau-locale-provider');
 
-var isRtl = localeProvider.isRtl();
-console.log(isRtl); // -> true or false
+localeProvider.isRtl().then(function(isRtl) {
+	console.log(isRtl); // -> true or false
+});
 ```
 
 ## Contributing
