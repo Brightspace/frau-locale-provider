@@ -1,8 +1,9 @@
 'use strict';
 
+var isFramed = require('frau-framed');
+
 var getHtmlLangFramed = require('./framed/getHtmlLang'),
 	getHtmlLangLocal = require('./local/getHtmlLang'),
-	isFramed = require('./isFramed'),
 	isRtlLocal = require('./local/isRtl'),
 	isRtlFramed = require('./framed/isRtl'),
 	resolveLang = require('./resolveLang');
