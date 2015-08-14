@@ -26,10 +26,6 @@
     "url": "https://github.com/Brightspace/frau-locale-provider/issues"
   },
   "homepage": "https://github.com/Brightspace/frau-locale-provider",
-  "dependencies": {
-    "ifrau": "^0.7.1",
-    "q": "^1.4.1"
-  },
   "devDependencies": {
     "chai": "^1.10.0",
     "coveralls": "^2.11.2",
