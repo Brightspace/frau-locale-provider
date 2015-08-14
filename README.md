@@ -15,29 +15,25 @@ To install via [NPM](https://www.npmjs.com/):
 ### getLangTag()
 
 Gets the current user's language tag, as defined in [RFC 5646](https://www.ietf.org/rfc/rfc5646.txt).
-This consists of a primary language subtag (e.g. "en", "fr") and an optional
-region subtag, separated by a hyphen (e.g. "en-US", "fr-CA").
+This consists of a primary language subtag (e.g. "en", "fr") and an optional region subtag, separated by a hyphen (e.g. "en-US", "fr-CA").
 
 ```javascript
 var localeProvider = require('frau-locale-provider');
 
-localeProvider.getLangTag().then(function(langTag) {
-	console.log(langTag); // -> e.g. "en-GB"
-});
+var langTag = localeProvider.getLangTag();
+console.log(langTag); // -> e.g. "en-GB"
 ```
 
 ### isRtl()
 
-Used to determine if the current user's locale requires that text be written
-in the [right to left (RTL)](http://en.wikipedia.org/wiki/Right-to-left)
+Used to determine if the current user's locale requires that text be written in the [right to left (RTL)](http://en.wikipedia.org/wiki/Right-to-left)
 direction.
 
 ```javascript
 var localeProvider = require('frau-locale-provider');
 
-localeProvider.isRtl().then(function(isRtl) {
-	console.log(isRtl); // -> true or false
-});
+var isRtl = localeProvider.isRtl();
+console.log(isRtl); // -> true or false
 ```
 
 ## Contributing
