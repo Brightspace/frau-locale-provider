@@ -4,10 +4,10 @@ var getHtmlLang = require('./getHtmlLang'),
 	isRtl = require('./isRtl'),
 	resolveLang = require('./resolveLang');
 
-var exports = {
+module.exports = {
 	getLangTag: function() {
-		var value = exports._getHtmlLang();
-		var langTag = exports._resolveLang(
+		var value = module.exports._getHtmlLang();
+		var langTag = module.exports._resolveLang(
 			value.lang,
 			value.fallback
 		);
@@ -17,5 +17,3 @@ var exports = {
 	_getHtmlLang: getHtmlLang,
 	_resolveLang: resolveLang
 };
-
-module.exports = exports;
