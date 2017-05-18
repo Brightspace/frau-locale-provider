@@ -4,9 +4,7 @@
   "description": "Free range app utility for providing information about the current user's locale within the ILP",
   "main": "src/index.js",
   "scripts": {
-    "lint": "npm run lint:src && npm run lint:test",
-    "lint:src": "jshint src/*.js",
-    "lint:test": "jshint test/*.js",
+    "lint": "eslint .",
     "test:unit": "istanbul cover _mocha test/*.js -- -R spec",
     "test": "npm run lint -s && npm run test:unit -s",
     "report-coverage": "coveralls < ./coverage/lcov.info"
@@ -29,8 +27,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.13.1",
+    "eslint": "^3.19.0",
+    "eslint-config-brightspace": "^0.2.4",
     "istanbul": "^0.4.5",
-    "jshint": "^2.9.4",
     "mocha": "^3.4.1",
     "sinon": "^2.2.0"
   }

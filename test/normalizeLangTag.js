@@ -5,14 +5,14 @@ var expect = require('chai').expect,
 
 describe('normalizeLangTag', function() {
 
-	[undefined,null,''].forEach(function(langTag, index) {
+	[undefined, null, ''].forEach(function(langTag, index) {
 		it('should return empty for invalid value ' + (index + 1), function() {
 			var value = normalizeLangTag(langTag);
 			expect(value).to.equal('');
 		});
 	});
 
-	[' ',' en-US', 'fr-CA ', ' ab-CD '].forEach(function(langTag) {
+	[' ', ' en-US', 'fr-CA ', ' ab-CD '].forEach(function(langTag) {
 		it('should trim whitespace: "' + langTag + '"', function() {
 			var value = normalizeLangTag(langTag);
 			expect(value).to.equal(langTag.trim());

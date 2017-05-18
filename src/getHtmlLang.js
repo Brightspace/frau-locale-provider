@@ -4,17 +4,17 @@ var config = require('./config');
 
 module.exports = function() {
 
-	if(!window || !window.document) {
+	if (!window || !window.document) {
 		return { lang: config.defaultLangTag };
 	}
 
 	var elems = window.document.getElementsByTagName('html');
-	if( elems.length === 0 ) {
+	if ( elems.length === 0 ) {
 		return { lang: config.defaultLangTag };
 	}
 
 	var lang = elems[0].getAttribute('lang');
-	if( lang === null ) {
+	if ( lang === null ) {
 		return { lang: config.defaultLangTag };
 	}
 
@@ -23,7 +23,7 @@ module.exports = function() {
 	var value = {
 		lang: lang
 	};
-	if(fallback !== null) {
+	if (fallback !== null) {
 		value.fallback = fallback;
 	}
 	return value;
