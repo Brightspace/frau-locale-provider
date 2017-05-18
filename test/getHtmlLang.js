@@ -29,21 +29,21 @@ describe('getHtmlLang', function() {
 	});
 
 	[
-	/* window is undefined */
-	function() { global.window = undefined; },
-	/* window.document is undefined */
-	function() { global.window.document = undefined; },
-	/* no HTML elements */
-	function() {
-		global.window.document.getElementsByTagName = sinon.stub()
-		.returns([]);
-	},
-	/* no lang attribute on HTML element */
-	function() {
-		global.window.document.getElementsByTagName = sinon.stub()
-			.returns([{getAttribute: sinon.stub().returns(null)}]);
-	}
-	].forEach(function(func,index) {
+		/* window is undefined */
+		function() { global.window = undefined; },
+		/* window.document is undefined */
+		function() { global.window.document = undefined; },
+		/* no HTML elements */
+		function() {
+			global.window.document.getElementsByTagName = sinon.stub()
+			.returns([]);
+		},
+		/* no lang attribute on HTML element */
+		function() {
+			global.window.document.getElementsByTagName = sinon.stub()
+				.returns([{getAttribute: sinon.stub().returns(null)}]);
+		}
+	].forEach(function(func, index) {
 		it('should return default ' + ( index + 1 ), function() {
 			func();
 			var value = getHtmlLang();

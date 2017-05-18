@@ -22,8 +22,8 @@ describe('isRtl', function() {
 		/* window.document is undefined */
 		function() { global.window.document = undefined; },
 		/* window.document.body is undefined */
-		function() { global.window.document.body = undefined; },
-	].forEach(function(func,index) {
+		function() { global.window.document.body = undefined; }
+	].forEach(function(func, index) {
 		it('should return false in error case ' + ( index + 1 ), function() {
 			func();
 			var value = isRtl();
