@@ -3,6 +3,8 @@ node_js: stable
 sudo: false
 after_success:
 - npm run report-coverage
+- npm run browserify
+- '[ "$TRAVIS_SECURE_ENV_VARS" = "true" ] && [ "x$TRAVIS_TAG" != "x" ] && npm run publish:cdn'
 deploy:
   provider: npm
   email: d2ltravisdeploy@d2l.com
@@ -11,3 +13,6 @@ deploy:
   on:
     tags: true
     repo: Brightspace/frau-locale-provider
+env:
+  global:
+  - secure: "JrlBirmjbW3TjJlD2JzNrH6e4AM/LuvzCACe6g+dOCZ9fA0MiTI3ONlUpY1RbuxWR9LZO+4JCSOEmej1M7rqW1gjiUKzB+slR8UQmDIg3/wP8ZUdOQqAxbz/vKb5AMCJB3zsfcc0WdJ7hZueNk/Ah3Deq0SZ9mUxGXQ3a+hkR4I="
