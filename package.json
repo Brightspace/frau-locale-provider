@@ -4,10 +4,25 @@
   "description": "Free range app utility for providing information about the current user's locale within the ILP",
   "main": "src/index.js",
   "scripts": {
+    "prebrowserify": "rimraf dist && mkdir dist",
+    "browserify": "browserify -g uglifyify -s 'frauLocaleProvider' src/index.js > ./dist/frau-locale-provider.js",
     "lint": "eslint .",
     "test:unit": "istanbul cover _mocha test/*.js -- -R spec",
     "test": "npm run lint -s && npm run test:unit -s",
-    "report-coverage": "coveralls < ./coverage/lcov.info"
+    "report-coverage": "coveralls < ./coverage/lcov.info",
+    "publish:cdn": "frau-publisher"
+  },
+  "config": {
+    "frauPublisher": {
+      "files": "./dist/*.js",
+      "moduleType": "lib",
+      "targetDirectory": "frau-locale-provider",
+      "creds": {
+        "key": "AKIAIN2E2JXWLIOZUHJQ",
+        "secretVar": "CDN_SECRET"
+      },
+      "versionVar": "TRAVIS_TAG"
+    }
   },
   "repository": {
     "type": "git",
@@ -25,12 +40,16 @@
   },
   "homepage": "https://github.com/Brightspace/frau-locale-provider",
   "devDependencies": {
+    "browserify": "^14.4.0",
     "chai": "^3.5.0",
     "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-brightspace": "^0.2.4",
+    "frau-publisher": "^2.6.2",
     "istanbul": "^0.4.5",
     "mocha": "^3.4.1",
-    "sinon": "^2.2.0"
+    "rimraf": "^2.6.1",
+    "sinon": "^2.2.0",
+    "uglifyify": "^4.0.2"
   }
 }
