@@ -4,6 +4,7 @@ module.exports = {
 	defaultLangTag: 'en',
 	primary: [
 		'ar',
+		'da',
 		'de',
 		'en',
 		'es',
@@ -19,6 +20,7 @@ module.exports = {
 	],
 	regions: [
 		'ar-SA',
+		'da-DK',
 		'de-DE',
 		'en-CA',
 		'en-GB',
