@@ -2,14 +2,14 @@
 
 module.exports = function(langTag) {
 
-	if ( langTag === undefined || langTag === null ) {
+	if (langTag === undefined || langTag === null) {
 		return '';
 	}
 
 	langTag = langTag.trim().toLowerCase();
 
 	var subtags = langTag.split('-');
-	if ( subtags.length < 2 ) {
+	if (subtags.length < 2) {
 		return langTag;
 	}
 

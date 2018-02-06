@@ -7,7 +7,7 @@ function resolve(langTag, fallback) {
 
 	langTag = normalizeLangTag(langTag);
 
-	if ( config.regions.indexOf(langTag) > -1 ) {
+	if (config.regions.indexOf(langTag) > -1) {
 		return langTag;
 	}
 
@@ -15,12 +15,12 @@ function resolve(langTag, fallback) {
 		return config.aliases[langTag];
 	}
 
-	if ( config.primary.indexOf(langTag) > -1 ) {
+	if (config.primary.indexOf(langTag) > -1) {
 		return langTag;
 	}
 
 	var subtags = langTag.split('-');
-	if ( subtags.length > 0 && config.primary.indexOf(subtags[0]) > -1 ) {
+	if (subtags.length > 0 && config.primary.indexOf(subtags[0]) > -1) {
 		return subtags[0];
 	}
 
