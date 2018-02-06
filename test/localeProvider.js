@@ -24,7 +24,7 @@ describe('localeProvider', function() {
 	describe('getLangTag', function() {
 
 		it('should have getLangTag defined', function() {
-			expect(localeProvider.getLangTag).to.be.defined;
+			expect(localeProvider.getLangTag).to.not.be.undefined;
 		});
 
 		it('should call getHtmlLang', function() {
@@ -43,7 +43,7 @@ describe('localeProvider', function() {
 	describe('isRtl', function() {
 
 		it('should have isRtl defined', function() {
-			expect(localeProvider.isRtl).to.be.defined;
+			expect(localeProvider.isRtl).to.not.be.undefined;
 		});
 
 	});

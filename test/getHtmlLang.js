@@ -36,7 +36,7 @@ describe('getHtmlLang', function() {
 		/* no HTML elements */
 		function() {
 			global.window.document.getElementsByTagName = sinon.stub()
-			.returns([]);
+				.returns([]);
 		},
 		/* no lang attribute on HTML element */
 		function() {
@@ -44,7 +44,7 @@ describe('getHtmlLang', function() {
 				.returns([{getAttribute: sinon.stub().returns(null)}]);
 		}
 	].forEach(function(func, index) {
-		it('should return default ' + ( index + 1 ), function() {
+		it('should return default ' + (index + 1), function() {
 			func();
 			var value = getHtmlLang();
 			expect(value.lang).to.equal(config.defaultLangTag);
@@ -62,7 +62,7 @@ describe('getHtmlLang', function() {
 	it('should return null fallback when no data attribute', function() {
 		getAttribute.withArgs('data-lang-default').returns(null);
 		var value = getHtmlLang();
-		expect(value.fallback).to.not.be.defined;
+		expect(value.fallback).to.be.undefined;
 	});
 
 	it('should return fallback value', function() {

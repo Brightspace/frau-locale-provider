@@ -24,10 +24,10 @@ describe('isRtl', function() {
 		/* window.document.body is undefined */
 		function() { global.window.document.body = undefined; }
 	].forEach(function(func, index) {
-		it('should return false in error case ' + ( index + 1 ), function() {
+		it('should return false in error case ' + (index + 1), function() {
 			func();
 			var value = isRtl();
-			expect( value ).to.be.false;
+			expect(value).to.be.false;
 		});
 	});
 

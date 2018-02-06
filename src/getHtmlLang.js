@@ -9,12 +9,12 @@ module.exports = function() {
 	}
 
 	var elems = window.document.getElementsByTagName('html');
-	if ( elems.length === 0 ) {
+	if (elems.length === 0) {
 		return { lang: config.defaultLangTag };
 	}
 
 	var lang = elems[0].getAttribute('lang');
-	if ( lang === null ) {
+	if (lang === null) {
 		return { lang: config.defaultLangTag };
 	}
 
