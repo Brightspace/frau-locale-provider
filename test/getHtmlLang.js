@@ -41,7 +41,7 @@ describe('getHtmlLang', function() {
 		/* no lang attribute on HTML element */
 		function() {
 			global.window.document.getElementsByTagName = sinon.stub()
-				.returns([{getAttribute: sinon.stub().returns(null)}]);
+				.returns([{ getAttribute: sinon.stub().returns(null) }]);
 		}
 	].forEach(function(func, index) {
 		it('should return default ' + (index + 1), function() {

@@ -4,7 +4,7 @@ var expect = require('chai').expect,
 	localeProvider = require('../'),
 	sinon = require('sinon');
 
-var htmlLangValue = { lang: 'ab-CD', fallback: 'ef-GH'};
+var htmlLangValue = { lang: 'ab-CD', fallback: 'ef-GH' };
 
 describe('localeProvider', function() {
 
