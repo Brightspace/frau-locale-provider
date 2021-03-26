@@ -29,6 +29,7 @@ module.exports = {
 		'es-MX',
 		'fi-FI',
 		'fr-CA',
+		'fr-ON',
 		'ko-KR',
 		'nb-NO',
 		'nl-NL',
