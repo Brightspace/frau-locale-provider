@@ -5,10 +5,12 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test:unit": "istanbul cover _mocha test/*.js -- -R spec",
-    "test": "npm run lint -s && npm run test:unit -s",
-    "report-coverage": "coveralls < ./coverage/lcov.info"
+    "test:unit": "mocha test/*.js",
+    "test": "npm run lint && npm run test:unit"
   },
+  "files": [
+    "/src"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Brightspace/frau-locale-provider.git"
@@ -25,12 +27,10 @@
   },
   "homepage": "https://github.com/Brightspace/frau-locale-provider",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "coveralls": "^3.0.0",
-    "eslint": "^4.17.0",
-    "eslint-config-brightspace": "^0.4.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.0.0",
-    "sinon": "^4.2.2"
+    "chai": "^4",
+    "eslint": "^7",
+    "eslint-config-brightspace": "^0.14",
+    "mocha": "^8",
+    "sinon": "^10"
   }
 }
