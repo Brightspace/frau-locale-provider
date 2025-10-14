@@ -19,7 +19,9 @@ module.exports = {
 		'nl',
 		'pt',
 		'sv',
+		'th',
 		'tr',
+		'vi',
 		'zh'
 	],
 	regions: [
@@ -45,7 +47,9 @@ module.exports = {
 		'nl-NL',
 		'pt-BR',
 		'sv-SE',
+		'th-TH',
 		'tr-TR',
+		'vi-VN',
 		'zh-CN',
 		'zh-TW'
 	],
