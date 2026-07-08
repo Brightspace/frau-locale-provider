@@ -24,6 +24,9 @@
     "url": "https://github.com/Brightspace/frau-locale-provider/issues"
   },
   "homepage": "https://github.com/Brightspace/frau-locale-provider",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "chai": "^6",
     "mocha": "^11",
