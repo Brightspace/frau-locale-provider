@@ -1,62 +1,12 @@
 'use strict';
 
+var supported = require('@brightspace-ui/intl/lib/locale-data/supported.js');
+
 module.exports = {
 	defaultLangTag: 'en',
-	primary: [
-		'ar',
-		'ca',
-		'da',
-		'de',
-		'en',
-		'es',
-		'fi',
-		'fr',
-		'haw',
-		'hi',
-		'ja',
-		'ko',
-		'mi',
-		'nb',
-		'nl',
-		'pt',
-		'sv',
-		'th',
-		'tr',
-		'vi',
-		'zh'
-	],
-	regions: [
-		'ar-SA',
-		'ca-ES',
-		'cy-GB',
-		'da-DK',
-		'de-DE',
-		'en-CA',
-		'en-GB',
-		'en-US',
-		'es-MX',
-		'es-ES',
-		'fi-FI',
-		'fr-CA',
-		'fr-FR',
-		'fr-ON',
-		'haw-US',
-		'hi-IN',
-		'ja-JP',
-		'ko-KR',
-		'mi-NZ',
-		'nb-NO',
-		'nl-NL',
-		'pt-BR',
-		'sv-SE',
-		'th-TH',
-		'tr-TR',
-		'vi-VN',
-		'zh-CN',
-		'zh-TW'
-	],
+	primary: supported.supportedBaseLocales,
+	regions: supported.supportedLocales,
 	aliases: {
 		'en-AU': 'en-GB'
 	}
 };
-
